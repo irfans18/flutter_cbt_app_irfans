@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_cbt_app_irfans/core/extensions/build_context_ext.dart';
+import 'package:flutter_cbt_app_irfans/data/datasources/auth_local_datasource.dart';
+import 'package:flutter_cbt_app_irfans/data/models/responses/auth_response_model.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/components/search_input.dart';
@@ -35,10 +37,10 @@ class HeaderHome extends StatelessWidget {
               const SizedBox(width: 16.0),
               SizedBox(
                 width: context.deviceWidth - 208.0,
-                child: const Column(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Halo,',
                       style: TextStyle(
                         color: Colors.white,
@@ -46,14 +48,31 @@ class HeaderHome extends StatelessWidget {
                         fontWeight: FontWeight.w500,
                       ),
                     ),
-                    Text(
-                      'Saiful Bahri',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400,
-                      ),
-                      overflow: TextOverflow.ellipsis,
+                    FutureBuilder<AuthResponseModel>(
+                      future: AuthLocalDataSource().getAuthData(),
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return Text(
+                            snapshot.data!.user.name,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          );
+                        } else {
+                          return const Text(
+                            'Saiful Bahri',
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                            ),
+                            overflow: TextOverflow.ellipsis,
+                          );
+                        }
+                      },
                     ),
                   ],
                 ),
