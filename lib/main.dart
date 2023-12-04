@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_cbt_app_irfans/data/datasources/auth_local_datasource.dart';
+import 'package:flutter_cbt_app_irfans/data/models/responses/auth_response_model.dart';
+import 'package:flutter_cbt_app_irfans/presentation/home/pages/dashboard_page.dart';
 
 import 'core/constants/colors.dart';
 import 'presentation/auth/bloc/register/register_bloc.dart';
@@ -23,7 +26,16 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           scaffoldBackgroundColor: AppColors.light,
         ),
-        home: const OnboardingPage(),
+        home: FutureBuilder<AuthResponseModel>(
+          future: AuthLocalDataSource().getAuthData(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return const DashboardPage();
+            } else {
+              return const OnboardingPage();
+            }
+          },
+        ),
       ),
     );
   }
