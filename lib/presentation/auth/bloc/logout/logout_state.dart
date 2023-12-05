@@ -5,5 +5,5 @@ class LogoutState with _$LogoutState {
   const factory LogoutState.initial() = _Initial;
   const factory LogoutState.loading() = _Loading;
   const factory LogoutState.success() = _Success;
-  const factory LogoutState.error() = _Error;
+  const factory LogoutState.error(message) = _Error;
 }

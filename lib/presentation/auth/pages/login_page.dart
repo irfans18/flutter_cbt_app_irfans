@@ -24,6 +24,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    print("LOGIN PAGE");
     return Scaffold(
       backgroundColor: AppColors.white,
       appBar: AppBar(
@@ -58,53 +59,50 @@ class _LoginPageState extends State<LoginPage> {
           BlocConsumer<LoginBloc, LoginState>(
             listener: (context, state) {
               state.maybeWhen(
-                orElse: () {},
-                success: (state) {
-                  AuthLocalDataSource().saveAuthData(state);
-                  context.pushReplacement(const DashboardPage());
-                },
-                error: (message) {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: const Text('Error'),
-                        content: Text(message),
-                        actions: [
-                          TextButton(
-                            onPressed: () {
-                              Navigator.of(context).pop();
-                            },
-                            child: const Text('OK'),
-                          ),
-                        ],
-                      );
-                    },
-                  );
-                },
-              );
+                  orElse: () {},
+                  success: (data) {
+                    //simpan data ke local storage
+                    AuthLocalDataSource().saveAuthData(data);
+                    //snackbar
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(
+                        content: Text(
+                          'Login success',
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        backgroundColor: AppColors.lightGreen,
+                      ),
+                    );
+                    context.pushReplacement(const DashboardPage());
+                  },
+                  error: (message) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(message,
+                            style: const TextStyle(color: Colors.black)),
+                        backgroundColor: AppColors.lightRed,
+                      ),
+                    );
+                  });
             },
             builder: (context, state) {
               return state.maybeWhen(
-                orElse: () => Button.filled(
-                  onPressed: () {
-                    final dataRequest = LoginRequestModel(
-                      email: emailController.text,
-                      password: passwordController.text,
-                    );
-                    context
-                        .read<LoginBloc>()
-                        .add(LoginEvent.login(dataRequest));
-                  },
-                  label: 'LOG IN',
-                ),
-                loading: () {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                },
-              );
-              // return
+                  orElse: () => Button.filled(
+                        onPressed: () {
+                          // context.pushReplacement(const DashboardPage());
+                          final requestModel = LoginRequestModel(
+                              email: emailController.text,
+                              password: passwordController.text);
+                          print("MODEL : "+requestModel.toJson().toString());
+                          context
+                              .read<LoginBloc>()
+                              .add(LoginEvent.login(requestModel));
+                        },
+                        label: 'LOG IN',
+                      ),
+                  loading: () => const Center(
+                        child: CircularProgressIndicator(),
+                      ));
             },
           ),
           const SizedBox(height: 24.0),

@@ -196,10 +196,10 @@ class __$$LoginImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$LoginImpl(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as LoginRequestModel,
@@ -225,12 +225,11 @@ class _$LoginImpl implements _Login {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginImpl &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override
@@ -630,10 +629,10 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? data = freezed,
+    Object? data = null,
   }) {
     return _then(_$SuccessImpl(
-      freezed == data
+      null == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
               as AuthResponseModel,
@@ -659,12 +658,11 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            const DeepCollectionEquality().equals(other.data, data));
+            (identical(other.data, data) || other.data == data));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+  int get hashCode => Object.hash(runtimeType, data);
 
   @JsonKey(ignore: true)
   @override

@@ -285,7 +285,7 @@ mixin _$LogoutState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function() error,
+    required TResult Function(dynamic message) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -293,7 +293,7 @@ mixin _$LogoutState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function()? error,
+    TResult? Function(dynamic message)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -301,7 +301,7 @@ mixin _$LogoutState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function()? error,
+    TResult Function(dynamic message)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -391,7 +391,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function() error,
+    required TResult Function(dynamic message) error,
   }) {
     return initial();
   }
@@ -402,7 +402,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function()? error,
+    TResult? Function(dynamic message)? error,
   }) {
     return initial?.call();
   }
@@ -413,7 +413,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function()? error,
+    TResult Function(dynamic message)? error,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -505,7 +505,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function() error,
+    required TResult Function(dynamic message) error,
   }) {
     return loading();
   }
@@ -516,7 +516,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function()? error,
+    TResult? Function(dynamic message)? error,
   }) {
     return loading?.call();
   }
@@ -527,7 +527,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function()? error,
+    TResult Function(dynamic message)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -619,7 +619,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function() error,
+    required TResult Function(dynamic message) error,
   }) {
     return success();
   }
@@ -630,7 +630,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function()? error,
+    TResult? Function(dynamic message)? error,
   }) {
     return success?.call();
   }
@@ -641,7 +641,7 @@ class _$SuccessImpl implements _Success {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function()? error,
+    TResult Function(dynamic message)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -697,6 +697,8 @@ abstract class _$$ErrorImplCopyWith<$Res> {
   factory _$$ErrorImplCopyWith(
           _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
       __$$ErrorImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({dynamic message});
 }
 
 /// @nodoc
@@ -706,26 +708,48 @@ class __$$ErrorImplCopyWithImpl<$Res>
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$ErrorImpl(
+      freezed == message ? _value.message! : message,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$ErrorImpl implements _Error {
-  const _$ErrorImpl();
+  const _$ErrorImpl(this.message);
+
+  @override
+  final dynamic message;
 
   @override
   String toString() {
-    return 'LogoutState.error()';
+    return 'LogoutState.error(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ErrorImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorImpl &&
+            const DeepCollectionEquality().equals(other.message, message));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -733,9 +757,9 @@ class _$ErrorImpl implements _Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function() success,
-    required TResult Function() error,
+    required TResult Function(dynamic message) error,
   }) {
-    return error();
+    return error(message);
   }
 
   @override
@@ -744,9 +768,9 @@ class _$ErrorImpl implements _Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function()? success,
-    TResult? Function()? error,
+    TResult? Function(dynamic message)? error,
   }) {
-    return error?.call();
+    return error?.call(message);
   }
 
   @override
@@ -755,11 +779,11 @@ class _$ErrorImpl implements _Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function()? success,
-    TResult Function()? error,
+    TResult Function(dynamic message)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
-      return error();
+      return error(message);
     }
     return orElse();
   }
@@ -803,5 +827,10 @@ class _$ErrorImpl implements _Error {
 }
 
 abstract class _Error implements LogoutState {
-  const factory _Error() = _$ErrorImpl;
+  const factory _Error(final dynamic message) = _$ErrorImpl;
+
+  dynamic get message;
+  @JsonKey(ignore: true)
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

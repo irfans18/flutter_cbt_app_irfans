@@ -17,27 +17,33 @@ class AuthRemoteDataSource {
       body: registerRequestModel.toJson(),
     );
 
-    if (response.statusCode == 201) {
-      return right(AuthResponseModel.fromJson(response.body));
+    print(response.body);
+    print("STATUS CODE : " + response.statusCode.toString());
+
+    if (response.statusCode == 200) {
+      return Right(AuthResponseModel.fromJson(response.body));
     } else {
-      return left('Register failed');
+      return Left('Register failed');
     }
   }
 
   // implement login
-  Future<Either<String, AuthResponseModel>> login(LoginRequestModel loginRequestModel) async {
-    final response = await http.post(
-      Uri.parse(Api.login),
-      headers: <String,String>{
-        'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: loginRequestModel.toJson(),
-    );
+  Future<Either<String, AuthResponseModel>> login(
+      LoginRequestModel data) async {
+    final response =
+        await http.post(Uri.parse(Api.login),
+            headers: <String, String>{
+              'Content-Type': 'application/json; charset=UTF-8',
+            },
+            body: data.toJson());
 
-    if(response.statusCode == 200) {
-      return right(AuthResponseModel.fromJson(response.body));
+    print(response.body);
+    print("STATUS CODE : "+response.statusCode.toString());
+
+    if (response.statusCode == 200) {
+      return Right(AuthResponseModel.fromJson(response.body));
     } else {
-      return left('Login failed');
+      return const Left('login gagal');
     }
   }
 
@@ -53,9 +59,9 @@ class AuthRemoteDataSource {
     );
 
     if(response.statusCode == 200) {
-      return right(response.body);
+      return Right(response.body);
     } else {
-      return left('Logout failed');
+      return Left('Logout failed');
     }
   }
 }

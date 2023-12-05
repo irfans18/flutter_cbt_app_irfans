@@ -8,6 +8,7 @@ import 'package:flutter_cbt_app_irfans/presentation/auth/bloc/register/register_
 import '../../../core/components/buttons.dart';
 import '../../../core/components/custom_text_field.dart';
 import '../../../core/constants/colors.dart';
+import '../../home/pages/dashboard_page.dart';
 import '../widgets/register_success_dialog.dart';
 import 'login_page.dart';
 
@@ -62,13 +63,13 @@ class _RegisterPageState extends State<RegisterPage> {
                 orElse: () {},
                 success: (state) {
                   AuthLocalDataSource().saveAuthData(state);
-                  context.pushReplacement(const LoginPage());
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return const RegisterSuccessDialog();
-                    },
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('REGISTER SUCCESS'),
+                      backgroundColor: Colors.green,
+                    ),
                   );
+                  context.pushReplacement(const DashboardPage());
                 },
               );
             },
@@ -78,10 +79,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   return Button.filled(
                     onPressed: () {
                       final dataRequest = RegisterRequestModel(
-                          name: usernameController.text,
-                          email: emailController.text,
-                          password: passwordController.text,
-                          passwordConfirmation: confirmPasswordController.text);
+                        name: usernameController.text,
+                        email: emailController.text,
+                        password: passwordController.text,
+                        passwordConfirmation: confirmPasswordController.text,
+                      );
 
                       context
                           .read<RegisterBloc>()

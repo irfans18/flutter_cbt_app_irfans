@@ -13,8 +13,8 @@ class LogoutBloc extends Bloc<LogoutEvent, LogoutState> {
       emit(const _Loading());
       final response = await AuthRemoteDataSource().logout();
       response.fold(
-        (l) => emit(const _Error()), 
-        (r) => emit(const _Success())
+        (l) => emit(_Error(l)),
+        (r) => emit(const _Success()),
       );
     });
   }
