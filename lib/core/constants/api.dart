@@ -4,4 +4,6 @@ class Api {
   static const login = "$baseUrl/login";
   static const register = "$baseUrl/register";
   static const logout = "$baseUrl/logout";
+  static const contents = "$baseUrl/contents";
+  static const courses = "$baseUrl/courses";
 }

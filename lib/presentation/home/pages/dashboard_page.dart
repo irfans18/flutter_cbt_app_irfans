@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_cbt_app_irfans/core/extensions/build_context_ext.dart';
-import 'package:flutter_cbt_app_irfans/data/datasources/auth_local_datasource.dart';
-import 'package:flutter_cbt_app_irfans/presentation/auth/bloc/logout/logout_bloc.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
-import '../../auth/pages/login_page.dart';
+import '../../profile/pages/profile_page.dart';
 import '../widgets/nav_menu.dart';
 import 'home_page.dart';
 
@@ -26,7 +22,7 @@ class _DashboardPageState extends State<DashboardPage> {
     const Center(
       child: Text('Notif'),
     ),
-    const LogoutWidget(),
+    const ProfilePage(),
   ];
 
   void _onItemTapped(int index) {
@@ -78,26 +74,3 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 }
 
-class LogoutWidget extends StatefulWidget {
-  const LogoutWidget({
-    super.key,
-  });
-
-  @override
-  State<LogoutWidget> createState() => _LogoutWidgetState();
-}
-
-class _LogoutWidgetState extends State<LogoutWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: ElevatedButton(
-          onPressed: () {
-            context.read<LogoutBloc>().add(const LogoutEvent.logout());
-            AuthLocalDataSource().deleteAuthData();
-            context.pushReplacement(const LoginPage());
-          },
-          child: const Text('Logout')), //const Center(child: Text('Logout')),
-    );
-  }
-}
