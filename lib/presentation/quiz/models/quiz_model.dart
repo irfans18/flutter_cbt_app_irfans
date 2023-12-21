@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 
 
 import 'test_type.dart';
@@ -8,6 +9,7 @@ class QuizModel {
   final String type;
   final String description;
   final int duration;
+  final String category;
 
   QuizModel({
     required this.image,
@@ -15,6 +17,7 @@ class QuizModel {
     required this.type,
     required this.description,
     required this.duration,
+    required this.category,
   });
 
   TestType get testType => TestType.fromValue(type);
