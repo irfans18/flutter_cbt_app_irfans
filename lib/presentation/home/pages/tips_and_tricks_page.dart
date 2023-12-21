@@ -18,7 +18,7 @@ class TipsAndTricksPage extends StatefulWidget {
 class _TipsAndTricksPageState extends State<TipsAndTricksPage> {
   @override
   void initState() {
-    context.read().add(const ContentEvent.getContentById(2));
+    context.read<ContentBloc>().add(const ContentEvent.getContentById(2));
     super.initState();
   }
   @override

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/constants/colors.dart';
+import '../../course/pages/course_page.dart';
 import '../../profile/pages/profile_page.dart';
 import '../widgets/nav_menu.dart';
 import 'home_page.dart';
@@ -18,7 +19,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
   final List<Widget> _pages = [
     const HomePage(),
-    const Center(child: Text('Materi')),
+    const CoursePage(),
     const Center(
       child: Text('Notif'),
     ),
