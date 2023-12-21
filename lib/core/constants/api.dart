@@ -6,4 +6,8 @@ class Api {
   static const logout = "$baseUrl/logout";
   static const contents = "$baseUrl/contents";
   static const courses = "$baseUrl/courses";
+  static const getExams = "$baseUrl/get-exam-question?category=";
+  static const createExam = "$baseUrl/create-exam";
+  static const score = "$baseUrl/get-score";
+
 }

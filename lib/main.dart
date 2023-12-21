@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_cbt_app_irfans/data/datasources/exam_remote_datasource.dart';
+import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/create_exam/create_exam_bloc.dart';
+import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/exam_by_category/exam_by_category_bloc.dart';
 
 import 'core/constants/colors.dart';
 import 'data/datasources/auth_local_datasource.dart';
@@ -41,6 +44,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => CourseBloc(CourseRemoteDataSource()),
+        ),
+        BlocProvider(
+          create: (context) => ExamByCategoryBloc(ExamRemoteDataSource()),
+        ),
+        BlocProvider(
+          create: (context) => CreateExamBloc(ExamRemoteDataSource()),
         ),
       ],
       child: MaterialApp(

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'course_bloc.dart';
+part of 'create_exam_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,58 +15,58 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$CourseEvent {
+mixin _$CreateExamEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllCourse,
+    required TResult Function() createExam,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllCourse,
+    TResult? Function()? createExam,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllCourse,
+    TResult Function()? createExam,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllCourse value) getAllCourse,
+    required TResult Function(_CreateExam value) createExam,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllCourse value)? getAllCourse,
+    TResult? Function(_CreateExam value)? createExam,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllCourse value)? getAllCourse,
+    TResult Function(_CreateExam value)? createExam,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CourseEventCopyWith<$Res> {
-  factory $CourseEventCopyWith(
-          CourseEvent value, $Res Function(CourseEvent) then) =
-      _$CourseEventCopyWithImpl<$Res, CourseEvent>;
+abstract class $CreateExamEventCopyWith<$Res> {
+  factory $CreateExamEventCopyWith(
+          CreateExamEvent value, $Res Function(CreateExamEvent) then) =
+      _$CreateExamEventCopyWithImpl<$Res, CreateExamEvent>;
 }
 
 /// @nodoc
-class _$CourseEventCopyWithImpl<$Res, $Val extends CourseEvent>
-    implements $CourseEventCopyWith<$Res> {
-  _$CourseEventCopyWithImpl(this._value, this._then);
+class _$CreateExamEventCopyWithImpl<$Res, $Val extends CreateExamEvent>
+    implements $CreateExamEventCopyWith<$Res> {
+  _$CreateExamEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +83,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$CourseEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$CreateExamEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -97,7 +97,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'CourseEvent.started()';
+    return 'CreateExamEvent.started()';
   }
 
   @override
@@ -113,7 +113,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllCourse,
+    required TResult Function() createExam,
   }) {
     return started();
   }
@@ -122,7 +122,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllCourse,
+    TResult? Function()? createExam,
   }) {
     return started?.call();
   }
@@ -131,7 +131,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllCourse,
+    TResult Function()? createExam,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +144,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllCourse value) getAllCourse,
+    required TResult Function(_CreateExam value) createExam,
   }) {
     return started(this);
   }
@@ -153,7 +153,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllCourse value)? getAllCourse,
+    TResult? Function(_CreateExam value)? createExam,
   }) {
     return started?.call(this);
   }
@@ -162,7 +162,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllCourse value)? getAllCourse,
+    TResult Function(_CreateExam value)? createExam,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -172,40 +172,40 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements CourseEvent {
+abstract class _Started implements CreateExamEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetAllCourseImplCopyWith<$Res> {
-  factory _$$GetAllCourseImplCopyWith(
-          _$GetAllCourseImpl value, $Res Function(_$GetAllCourseImpl) then) =
-      __$$GetAllCourseImplCopyWithImpl<$Res>;
+abstract class _$$CreateExamImplCopyWith<$Res> {
+  factory _$$CreateExamImplCopyWith(
+          _$CreateExamImpl value, $Res Function(_$CreateExamImpl) then) =
+      __$$CreateExamImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$GetAllCourseImplCopyWithImpl<$Res>
-    extends _$CourseEventCopyWithImpl<$Res, _$GetAllCourseImpl>
-    implements _$$GetAllCourseImplCopyWith<$Res> {
-  __$$GetAllCourseImplCopyWithImpl(
-      _$GetAllCourseImpl _value, $Res Function(_$GetAllCourseImpl) _then)
+class __$$CreateExamImplCopyWithImpl<$Res>
+    extends _$CreateExamEventCopyWithImpl<$Res, _$CreateExamImpl>
+    implements _$$CreateExamImplCopyWith<$Res> {
+  __$$CreateExamImplCopyWithImpl(
+      _$CreateExamImpl _value, $Res Function(_$CreateExamImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$GetAllCourseImpl implements _GetAllCourse {
-  const _$GetAllCourseImpl();
+class _$CreateExamImpl implements _CreateExam {
+  const _$CreateExamImpl();
 
   @override
   String toString() {
-    return 'CourseEvent.getAllCourse()';
+    return 'CreateExamEvent.createExam()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$GetAllCourseImpl);
+        (other.runtimeType == runtimeType && other is _$CreateExamImpl);
   }
 
   @override
@@ -215,29 +215,29 @@ class _$GetAllCourseImpl implements _GetAllCourse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() getAllCourse,
+    required TResult Function() createExam,
   }) {
-    return getAllCourse();
+    return createExam();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? getAllCourse,
+    TResult? Function()? createExam,
   }) {
-    return getAllCourse?.call();
+    return createExam?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? getAllCourse,
+    TResult Function()? createExam,
     required TResult orElse(),
   }) {
-    if (getAllCourse != null) {
-      return getAllCourse();
+    if (createExam != null) {
+      return createExam();
     }
     return orElse();
   }
@@ -246,45 +246,45 @@ class _$GetAllCourseImpl implements _GetAllCourse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetAllCourse value) getAllCourse,
+    required TResult Function(_CreateExam value) createExam,
   }) {
-    return getAllCourse(this);
+    return createExam(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetAllCourse value)? getAllCourse,
+    TResult? Function(_CreateExam value)? createExam,
   }) {
-    return getAllCourse?.call(this);
+    return createExam?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetAllCourse value)? getAllCourse,
+    TResult Function(_CreateExam value)? createExam,
     required TResult orElse(),
   }) {
-    if (getAllCourse != null) {
-      return getAllCourse(this);
+    if (createExam != null) {
+      return createExam(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetAllCourse implements CourseEvent {
-  const factory _GetAllCourse() = _$GetAllCourseImpl;
+abstract class _CreateExam implements CreateExamEvent {
+  const factory _CreateExam() = _$CreateExamImpl;
 }
 
 /// @nodoc
-mixin _$CourseState {
+mixin _$CreateExamState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CourseResponseModel data) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) =>
       throw _privateConstructorUsedError;
@@ -292,7 +292,7 @@ mixin _$CourseState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CourseResponseModel data)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) =>
       throw _privateConstructorUsedError;
@@ -300,7 +300,7 @@ mixin _$CourseState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CourseResponseModel data)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) =>
@@ -333,16 +333,16 @@ mixin _$CourseState {
 }
 
 /// @nodoc
-abstract class $CourseStateCopyWith<$Res> {
-  factory $CourseStateCopyWith(
-          CourseState value, $Res Function(CourseState) then) =
-      _$CourseStateCopyWithImpl<$Res, CourseState>;
+abstract class $CreateExamStateCopyWith<$Res> {
+  factory $CreateExamStateCopyWith(
+          CreateExamState value, $Res Function(CreateExamState) then) =
+      _$CreateExamStateCopyWithImpl<$Res, CreateExamState>;
 }
 
 /// @nodoc
-class _$CourseStateCopyWithImpl<$Res, $Val extends CourseState>
-    implements $CourseStateCopyWith<$Res> {
-  _$CourseStateCopyWithImpl(this._value, this._then);
+class _$CreateExamStateCopyWithImpl<$Res, $Val extends CreateExamState>
+    implements $CreateExamStateCopyWith<$Res> {
+  _$CreateExamStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -359,7 +359,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$CourseStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$CreateExamStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -373,7 +373,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'CourseState.initial()';
+    return 'CreateExamState.initial()';
   }
 
   @override
@@ -390,7 +390,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CourseResponseModel data) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) {
     return initial();
@@ -401,7 +401,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CourseResponseModel data)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) {
     return initial?.call();
@@ -412,7 +412,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CourseResponseModel data)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -460,7 +460,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements CourseState {
+abstract class _Initial implements CreateExamState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -473,7 +473,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$CourseStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$CreateExamStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -487,7 +487,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'CourseState.loading()';
+    return 'CreateExamState.loading()';
   }
 
   @override
@@ -504,7 +504,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CourseResponseModel data) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) {
     return loading();
@@ -515,7 +515,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CourseResponseModel data)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) {
     return loading?.call();
@@ -526,7 +526,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CourseResponseModel data)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -574,7 +574,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements CourseState {
+abstract class _Loading implements CreateExamState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -583,71 +583,45 @@ abstract class _$$SuccessImplCopyWith<$Res> {
   factory _$$SuccessImplCopyWith(
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({CourseResponseModel data});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$CourseStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$CreateExamStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? data = null,
-  }) {
-    return _then(_$SuccessImpl(
-      null == data
-          ? _value.data
-          : data // ignore: cast_nullable_to_non_nullable
-              as CourseResponseModel,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.data);
-
-  @override
-  final CourseResponseModel data;
+  const _$SuccessImpl();
 
   @override
   String toString() {
-    return 'CourseState.success(data: $data)';
+    return 'CreateExamState.success()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SuccessImpl &&
-            (identical(other.data, data) || other.data == data));
+        (other.runtimeType == runtimeType && other is _$SuccessImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      __$$SuccessImplCopyWithImpl<_$SuccessImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CourseResponseModel data) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) {
-    return success(data);
+    return success();
   }
 
   @override
@@ -655,10 +629,10 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CourseResponseModel data)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) {
-    return success?.call(data);
+    return success?.call();
   }
 
   @override
@@ -666,12 +640,12 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CourseResponseModel data)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(data);
+      return success();
     }
     return orElse();
   }
@@ -714,13 +688,8 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements CourseState {
-  const factory _Success(final CourseResponseModel data) = _$SuccessImpl;
-
-  CourseResponseModel get data;
-  @JsonKey(ignore: true)
-  _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class _Success implements CreateExamState {
+  const factory _Success() = _$SuccessImpl;
 }
 
 /// @nodoc
@@ -734,7 +703,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$CourseStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$CreateExamStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -764,7 +733,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'CourseState.error(message: $message)';
+    return 'CreateExamState.error(message: $message)';
   }
 
   @override
@@ -789,7 +758,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(CourseResponseModel data) success,
+    required TResult Function() success,
     required TResult Function(String message) error,
   }) {
     return error(message);
@@ -800,7 +769,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(CourseResponseModel data)? success,
+    TResult? Function()? success,
     TResult? Function(String message)? error,
   }) {
     return error?.call(message);
@@ -811,7 +780,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(CourseResponseModel data)? success,
+    TResult Function()? success,
     TResult Function(String message)? error,
     required TResult orElse(),
   }) {
@@ -859,7 +828,7 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements CourseState {
+abstract class _Error implements CreateExamState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
