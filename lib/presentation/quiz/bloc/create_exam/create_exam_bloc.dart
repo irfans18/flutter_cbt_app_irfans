@@ -3,7 +3,6 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:flutter_cbt_app_irfans/data/datasources/exam_remote_datasource.dart';
-import 'package:flutter_cbt_app_irfans/data/models/responses/exam_response_model.dart';
 
 part 'create_exam_bloc.freezed.dart';
 part 'create_exam_event.dart';

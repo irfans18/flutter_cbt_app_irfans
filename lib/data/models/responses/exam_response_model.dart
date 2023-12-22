@@ -4,7 +4,7 @@ import 'dart:convert';
 class ExamResponseModel {
   final String message;
   final int timer;
-  final List<Datum> data;
+  final List<Quest> data;
 
   ExamResponseModel({
     required this.message,
@@ -21,7 +21,7 @@ class ExamResponseModel {
       ExamResponseModel(
         message: json["message"],
         timer: json["timer"] ?? 0,
-        data: List<Datum>.from(json["data"].map((x) => Datum.fromMap(x))),
+        data: List<Quest>.from(json["data"].map((x) => Quest.fromMap(x))),
       );
 
   Map<String, dynamic> toMap() => {
@@ -31,7 +31,7 @@ class ExamResponseModel {
       };
 }
 
-class Datum {
+class Quest {
   final int id;
   final String question;
   final String category;
@@ -40,7 +40,7 @@ class Datum {
   final String optionC;
   final String optionD;
 
-  Datum({
+  Quest({
     required this.id,
     required this.question,
     required this.category,
@@ -50,11 +50,11 @@ class Datum {
     required this.optionD,
   });
 
-  factory Datum.fromJson(String str) => Datum.fromMap(json.decode(str));
+  factory Quest.fromJson(String str) => Quest.fromMap(json.decode(str));
 
   String toJson() => json.encode(toMap());
 
-  factory Datum.fromMap(Map<String, dynamic> json) => Datum(
+  factory Quest.fromMap(Map<String, dynamic> json) => Quest(
         id: json["id"],
         question: json["question"],
         category: json["category"],

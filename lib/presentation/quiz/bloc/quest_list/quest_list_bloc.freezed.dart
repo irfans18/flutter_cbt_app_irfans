@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'exam_by_category_bloc.dart';
+part of 'quest_list_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,58 +15,64 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ExamByCategoryEvent {
+mixin _$QuestListEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String category) getExamByCategory,
+    required TResult Function(List<Quest> data) getQuestList,
+    required TResult Function() nextQuest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String category)? getExamByCategory,
+    TResult? Function(List<Quest> data)? getQuestList,
+    TResult? Function()? nextQuest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String category)? getExamByCategory,
+    TResult Function(List<Quest> data)? getQuestList,
+    TResult Function()? nextQuest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetExamByCategory value) getExamByCategory,
+    required TResult Function(_GetQuestList value) getQuestList,
+    required TResult Function(_NextQuest value) nextQuest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetExamByCategory value)? getExamByCategory,
+    TResult? Function(_GetQuestList value)? getQuestList,
+    TResult? Function(_NextQuest value)? nextQuest,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetExamByCategory value)? getExamByCategory,
+    TResult Function(_GetQuestList value)? getQuestList,
+    TResult Function(_NextQuest value)? nextQuest,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ExamByCategoryEventCopyWith<$Res> {
-  factory $ExamByCategoryEventCopyWith(
-          ExamByCategoryEvent value, $Res Function(ExamByCategoryEvent) then) =
-      _$ExamByCategoryEventCopyWithImpl<$Res, ExamByCategoryEvent>;
+abstract class $QuestListEventCopyWith<$Res> {
+  factory $QuestListEventCopyWith(
+          QuestListEvent value, $Res Function(QuestListEvent) then) =
+      _$QuestListEventCopyWithImpl<$Res, QuestListEvent>;
 }
 
 /// @nodoc
-class _$ExamByCategoryEventCopyWithImpl<$Res, $Val extends ExamByCategoryEvent>
-    implements $ExamByCategoryEventCopyWith<$Res> {
-  _$ExamByCategoryEventCopyWithImpl(this._value, this._then);
+class _$QuestListEventCopyWithImpl<$Res, $Val extends QuestListEvent>
+    implements $QuestListEventCopyWith<$Res> {
+  _$QuestListEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +89,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$ExamByCategoryEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$QuestListEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -97,7 +103,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'ExamByCategoryEvent.started()';
+    return 'QuestListEvent.started()';
   }
 
   @override
@@ -113,7 +119,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String category) getExamByCategory,
+    required TResult Function(List<Quest> data) getQuestList,
+    required TResult Function() nextQuest,
   }) {
     return started();
   }
@@ -122,7 +129,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String category)? getExamByCategory,
+    TResult? Function(List<Quest> data)? getQuestList,
+    TResult? Function()? nextQuest,
   }) {
     return started?.call();
   }
@@ -131,7 +139,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String category)? getExamByCategory,
+    TResult Function(List<Quest> data)? getQuestList,
+    TResult Function()? nextQuest,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +153,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetExamByCategory value) getExamByCategory,
+    required TResult Function(_GetQuestList value) getQuestList,
+    required TResult Function(_NextQuest value) nextQuest,
   }) {
     return started(this);
   }
@@ -153,7 +163,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetExamByCategory value)? getExamByCategory,
+    TResult? Function(_GetQuestList value)? getQuestList,
+    TResult? Function(_NextQuest value)? nextQuest,
   }) {
     return started?.call(this);
   }
@@ -162,7 +173,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetExamByCategory value)? getExamByCategory,
+    TResult Function(_GetQuestList value)? getQuestList,
+    TResult Function(_NextQuest value)? nextQuest,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -172,100 +184,107 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements ExamByCategoryEvent {
+abstract class _Started implements QuestListEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$GetExamByCategoryImplCopyWith<$Res> {
-  factory _$$GetExamByCategoryImplCopyWith(_$GetExamByCategoryImpl value,
-          $Res Function(_$GetExamByCategoryImpl) then) =
-      __$$GetExamByCategoryImplCopyWithImpl<$Res>;
+abstract class _$$GetQuestListImplCopyWith<$Res> {
+  factory _$$GetQuestListImplCopyWith(
+          _$GetQuestListImpl value, $Res Function(_$GetQuestListImpl) then) =
+      __$$GetQuestListImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String category});
+  $Res call({List<Quest> data});
 }
 
 /// @nodoc
-class __$$GetExamByCategoryImplCopyWithImpl<$Res>
-    extends _$ExamByCategoryEventCopyWithImpl<$Res, _$GetExamByCategoryImpl>
-    implements _$$GetExamByCategoryImplCopyWith<$Res> {
-  __$$GetExamByCategoryImplCopyWithImpl(_$GetExamByCategoryImpl _value,
-      $Res Function(_$GetExamByCategoryImpl) _then)
+class __$$GetQuestListImplCopyWithImpl<$Res>
+    extends _$QuestListEventCopyWithImpl<$Res, _$GetQuestListImpl>
+    implements _$$GetQuestListImplCopyWith<$Res> {
+  __$$GetQuestListImplCopyWithImpl(
+      _$GetQuestListImpl _value, $Res Function(_$GetQuestListImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? category = null,
+    Object? data = null,
   }) {
-    return _then(_$GetExamByCategoryImpl(
-      null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$GetQuestListImpl(
+      null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<Quest>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$GetExamByCategoryImpl implements _GetExamByCategory {
-  const _$GetExamByCategoryImpl(this.category);
+class _$GetQuestListImpl implements _GetQuestList {
+  const _$GetQuestListImpl(final List<Quest> data) : _data = data;
 
+  final List<Quest> _data;
   @override
-  final String category;
+  List<Quest> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
   String toString() {
-    return 'ExamByCategoryEvent.getExamByCategory(category: $category)';
+    return 'QuestListEvent.getQuestList(data: $data)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$GetExamByCategoryImpl &&
-            (identical(other.category, category) ||
-                other.category == category));
+            other is _$GetQuestListImpl &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, category);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$GetExamByCategoryImplCopyWith<_$GetExamByCategoryImpl> get copyWith =>
-      __$$GetExamByCategoryImplCopyWithImpl<_$GetExamByCategoryImpl>(
-          this, _$identity);
+  _$$GetQuestListImplCopyWith<_$GetQuestListImpl> get copyWith =>
+      __$$GetQuestListImplCopyWithImpl<_$GetQuestListImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String category) getExamByCategory,
+    required TResult Function(List<Quest> data) getQuestList,
+    required TResult Function() nextQuest,
   }) {
-    return getExamByCategory(category);
+    return getQuestList(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String category)? getExamByCategory,
+    TResult? Function(List<Quest> data)? getQuestList,
+    TResult? Function()? nextQuest,
   }) {
-    return getExamByCategory?.call(category);
+    return getQuestList?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String category)? getExamByCategory,
+    TResult Function(List<Quest> data)? getQuestList,
+    TResult Function()? nextQuest,
     required TResult orElse(),
   }) {
-    if (getExamByCategory != null) {
-      return getExamByCategory(category);
+    if (getQuestList != null) {
+      return getQuestList(data);
     }
     return orElse();
   }
@@ -274,71 +293,178 @@ class _$GetExamByCategoryImpl implements _GetExamByCategory {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(_GetExamByCategory value) getExamByCategory,
+    required TResult Function(_GetQuestList value) getQuestList,
+    required TResult Function(_NextQuest value) nextQuest,
   }) {
-    return getExamByCategory(this);
+    return getQuestList(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(_GetExamByCategory value)? getExamByCategory,
+    TResult? Function(_GetQuestList value)? getQuestList,
+    TResult? Function(_NextQuest value)? nextQuest,
   }) {
-    return getExamByCategory?.call(this);
+    return getQuestList?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(_GetExamByCategory value)? getExamByCategory,
+    TResult Function(_GetQuestList value)? getQuestList,
+    TResult Function(_NextQuest value)? nextQuest,
     required TResult orElse(),
   }) {
-    if (getExamByCategory != null) {
-      return getExamByCategory(this);
+    if (getQuestList != null) {
+      return getQuestList(this);
     }
     return orElse();
   }
 }
 
-abstract class _GetExamByCategory implements ExamByCategoryEvent {
-  const factory _GetExamByCategory(final String category) =
-      _$GetExamByCategoryImpl;
+abstract class _GetQuestList implements QuestListEvent {
+  const factory _GetQuestList(final List<Quest> data) = _$GetQuestListImpl;
 
-  String get category;
+  List<Quest> get data;
   @JsonKey(ignore: true)
-  _$$GetExamByCategoryImplCopyWith<_$GetExamByCategoryImpl> get copyWith =>
+  _$$GetQuestListImplCopyWith<_$GetQuestListImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$ExamByCategoryState {
+abstract class _$$NextQuestImplCopyWith<$Res> {
+  factory _$$NextQuestImplCopyWith(
+          _$NextQuestImpl value, $Res Function(_$NextQuestImpl) then) =
+      __$$NextQuestImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NextQuestImplCopyWithImpl<$Res>
+    extends _$QuestListEventCopyWithImpl<$Res, _$NextQuestImpl>
+    implements _$$NextQuestImplCopyWith<$Res> {
+  __$$NextQuestImplCopyWithImpl(
+      _$NextQuestImpl _value, $Res Function(_$NextQuestImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$NextQuestImpl implements _NextQuest {
+  const _$NextQuestImpl();
+
+  @override
+  String toString() {
+    return 'QuestListEvent.nextQuest()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NextQuestImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(List<Quest> data) getQuestList,
+    required TResult Function() nextQuest,
+  }) {
+    return nextQuest();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(List<Quest> data)? getQuestList,
+    TResult? Function()? nextQuest,
+  }) {
+    return nextQuest?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(List<Quest> data)? getQuestList,
+    TResult Function()? nextQuest,
+    required TResult orElse(),
+  }) {
+    if (nextQuest != null) {
+      return nextQuest();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetQuestList value) getQuestList,
+    required TResult Function(_NextQuest value) nextQuest,
+  }) {
+    return nextQuest(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetQuestList value)? getQuestList,
+    TResult? Function(_NextQuest value)? nextQuest,
+  }) {
+    return nextQuest?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetQuestList value)? getQuestList,
+    TResult Function(_NextQuest value)? nextQuest,
+    required TResult orElse(),
+  }) {
+    if (nextQuest != null) {
+      return nextQuest(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NextQuest implements QuestListEvent {
+  const factory _NextQuest() = _$NextQuestImpl;
+}
+
+/// @nodoc
+mixin _$QuestListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ExamResponseModel data) success,
+    required TResult Function(List<Quest> data, int index, bool isNext) success,
     required TResult Function(String message) error,
-    required TResult Function() notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ExamResponseModel data)? success,
+    TResult? Function(List<Quest> data, int index, bool isNext)? success,
     TResult? Function(String message)? error,
-    TResult? Function()? notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ExamResponseModel data)? success,
+    TResult Function(List<Quest> data, int index, bool isNext)? success,
     TResult Function(String message)? error,
-    TResult Function()? notFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -348,7 +474,6 @@ mixin _$ExamByCategoryState {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
-    required TResult Function(_NotFound value) notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -357,7 +482,6 @@ mixin _$ExamByCategoryState {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
-    TResult? Function(_NotFound value)? notFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -366,23 +490,22 @@ mixin _$ExamByCategoryState {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
-    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ExamByCategoryStateCopyWith<$Res> {
-  factory $ExamByCategoryStateCopyWith(
-          ExamByCategoryState value, $Res Function(ExamByCategoryState) then) =
-      _$ExamByCategoryStateCopyWithImpl<$Res, ExamByCategoryState>;
+abstract class $QuestListStateCopyWith<$Res> {
+  factory $QuestListStateCopyWith(
+          QuestListState value, $Res Function(QuestListState) then) =
+      _$QuestListStateCopyWithImpl<$Res, QuestListState>;
 }
 
 /// @nodoc
-class _$ExamByCategoryStateCopyWithImpl<$Res, $Val extends ExamByCategoryState>
-    implements $ExamByCategoryStateCopyWith<$Res> {
-  _$ExamByCategoryStateCopyWithImpl(this._value, this._then);
+class _$QuestListStateCopyWithImpl<$Res, $Val extends QuestListState>
+    implements $QuestListStateCopyWith<$Res> {
+  _$QuestListStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -399,7 +522,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ExamByCategoryStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$QuestListStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -413,7 +536,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'ExamByCategoryState.initial()';
+    return 'QuestListState.initial()';
   }
 
   @override
@@ -430,9 +553,8 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ExamResponseModel data) success,
+    required TResult Function(List<Quest> data, int index, bool isNext) success,
     required TResult Function(String message) error,
-    required TResult Function() notFound,
   }) {
     return initial();
   }
@@ -442,9 +564,8 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ExamResponseModel data)? success,
+    TResult? Function(List<Quest> data, int index, bool isNext)? success,
     TResult? Function(String message)? error,
-    TResult? Function()? notFound,
   }) {
     return initial?.call();
   }
@@ -454,9 +575,8 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ExamResponseModel data)? success,
+    TResult Function(List<Quest> data, int index, bool isNext)? success,
     TResult Function(String message)? error,
-    TResult Function()? notFound,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -472,7 +592,6 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
-    required TResult Function(_NotFound value) notFound,
   }) {
     return initial(this);
   }
@@ -484,7 +603,6 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
-    TResult? Function(_NotFound value)? notFound,
   }) {
     return initial?.call(this);
   }
@@ -496,7 +614,6 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
-    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -506,7 +623,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements ExamByCategoryState {
+abstract class _Initial implements QuestListState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -519,7 +636,7 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$ExamByCategoryStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$QuestListStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
@@ -533,7 +650,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'ExamByCategoryState.loading()';
+    return 'QuestListState.loading()';
   }
 
   @override
@@ -550,9 +667,8 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ExamResponseModel data) success,
+    required TResult Function(List<Quest> data, int index, bool isNext) success,
     required TResult Function(String message) error,
-    required TResult Function() notFound,
   }) {
     return loading();
   }
@@ -562,9 +678,8 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ExamResponseModel data)? success,
+    TResult? Function(List<Quest> data, int index, bool isNext)? success,
     TResult? Function(String message)? error,
-    TResult? Function()? notFound,
   }) {
     return loading?.call();
   }
@@ -574,9 +689,8 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ExamResponseModel data)? success,
+    TResult Function(List<Quest> data, int index, bool isNext)? success,
     TResult Function(String message)? error,
-    TResult Function()? notFound,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -592,7 +706,6 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
-    required TResult Function(_NotFound value) notFound,
   }) {
     return loading(this);
   }
@@ -604,7 +717,6 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
-    TResult? Function(_NotFound value)? notFound,
   }) {
     return loading?.call(this);
   }
@@ -616,7 +728,6 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
-    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -626,7 +737,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements ExamByCategoryState {
+abstract class _Loading implements QuestListState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -636,12 +747,12 @@ abstract class _$$SuccessImplCopyWith<$Res> {
           _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
       __$$SuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({ExamResponseModel data});
+  $Res call({List<Quest> data, int index, bool isNext});
 }
 
 /// @nodoc
 class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$ExamByCategoryStateCopyWithImpl<$Res, _$SuccessImpl>
+    extends _$QuestListStateCopyWithImpl<$Res, _$SuccessImpl>
     implements _$$SuccessImplCopyWith<$Res> {
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
@@ -651,12 +762,22 @@ class __$$SuccessImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = null,
+    Object? index = null,
+    Object? isNext = null,
   }) {
     return _then(_$SuccessImpl(
       null == data
-          ? _value.data
+          ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as ExamResponseModel,
+              as List<Quest>,
+      null == index
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+      null == isNext
+          ? _value.isNext
+          : isNext // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -664,14 +785,25 @@ class __$$SuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessImpl implements _Success {
-  const _$SuccessImpl(this.data);
+  const _$SuccessImpl(final List<Quest> data, this.index, this.isNext)
+      : _data = data;
+
+  final List<Quest> _data;
+  @override
+  List<Quest> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
-  final ExamResponseModel data;
+  final int index;
+  @override
+  final bool isNext;
 
   @override
   String toString() {
-    return 'ExamByCategoryState.success(data: $data)';
+    return 'QuestListState.success(data: $data, index: $index, isNext: $isNext)';
   }
 
   @override
@@ -679,11 +811,14 @@ class _$SuccessImpl implements _Success {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessImpl &&
-            (identical(other.data, data) || other.data == data));
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            (identical(other.index, index) || other.index == index) &&
+            (identical(other.isNext, isNext) || other.isNext == isNext));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_data), index, isNext);
 
   @JsonKey(ignore: true)
   @override
@@ -696,11 +831,10 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ExamResponseModel data) success,
+    required TResult Function(List<Quest> data, int index, bool isNext) success,
     required TResult Function(String message) error,
-    required TResult Function() notFound,
   }) {
-    return success(data);
+    return success(data, index, isNext);
   }
 
   @override
@@ -708,11 +842,10 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ExamResponseModel data)? success,
+    TResult? Function(List<Quest> data, int index, bool isNext)? success,
     TResult? Function(String message)? error,
-    TResult? Function()? notFound,
   }) {
-    return success?.call(data);
+    return success?.call(data, index, isNext);
   }
 
   @override
@@ -720,13 +853,12 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ExamResponseModel data)? success,
+    TResult Function(List<Quest> data, int index, bool isNext)? success,
     TResult Function(String message)? error,
-    TResult Function()? notFound,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(data);
+      return success(data, index, isNext);
     }
     return orElse();
   }
@@ -738,7 +870,6 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
-    required TResult Function(_NotFound value) notFound,
   }) {
     return success(this);
   }
@@ -750,7 +881,6 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
-    TResult? Function(_NotFound value)? notFound,
   }) {
     return success?.call(this);
   }
@@ -762,7 +892,6 @@ class _$SuccessImpl implements _Success {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
-    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -772,10 +901,14 @@ class _$SuccessImpl implements _Success {
   }
 }
 
-abstract class _Success implements ExamByCategoryState {
-  const factory _Success(final ExamResponseModel data) = _$SuccessImpl;
+abstract class _Success implements QuestListState {
+  const factory _Success(
+          final List<Quest> data, final int index, final bool isNext) =
+      _$SuccessImpl;
 
-  ExamResponseModel get data;
+  List<Quest> get data;
+  int get index;
+  bool get isNext;
   @JsonKey(ignore: true)
   _$$SuccessImplCopyWith<_$SuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -792,7 +925,7 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$ExamByCategoryStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$QuestListStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
@@ -822,7 +955,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'ExamByCategoryState.error(message: $message)';
+    return 'QuestListState.error(message: $message)';
   }
 
   @override
@@ -847,9 +980,8 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(ExamResponseModel data) success,
+    required TResult Function(List<Quest> data, int index, bool isNext) success,
     required TResult Function(String message) error,
-    required TResult Function() notFound,
   }) {
     return error(message);
   }
@@ -859,9 +991,8 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(ExamResponseModel data)? success,
+    TResult? Function(List<Quest> data, int index, bool isNext)? success,
     TResult? Function(String message)? error,
-    TResult? Function()? notFound,
   }) {
     return error?.call(message);
   }
@@ -871,9 +1002,8 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(ExamResponseModel data)? success,
+    TResult Function(List<Quest> data, int index, bool isNext)? success,
     TResult Function(String message)? error,
-    TResult Function()? notFound,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -889,7 +1019,6 @@ class _$ErrorImpl implements _Error {
     required TResult Function(_Loading value) loading,
     required TResult Function(_Success value) success,
     required TResult Function(_Error value) error,
-    required TResult Function(_NotFound value) notFound,
   }) {
     return error(this);
   }
@@ -901,7 +1030,6 @@ class _$ErrorImpl implements _Error {
     TResult? Function(_Loading value)? loading,
     TResult? Function(_Success value)? success,
     TResult? Function(_Error value)? error,
-    TResult? Function(_NotFound value)? notFound,
   }) {
     return error?.call(this);
   }
@@ -913,7 +1041,6 @@ class _$ErrorImpl implements _Error {
     TResult Function(_Loading value)? loading,
     TResult Function(_Success value)? success,
     TResult Function(_Error value)? error,
-    TResult Function(_NotFound value)? notFound,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -923,131 +1050,11 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements ExamByCategoryState {
+abstract class _Error implements QuestListState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
   @JsonKey(ignore: true)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$NotFoundImplCopyWith<$Res> {
-  factory _$$NotFoundImplCopyWith(
-          _$NotFoundImpl value, $Res Function(_$NotFoundImpl) then) =
-      __$$NotFoundImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$NotFoundImplCopyWithImpl<$Res>
-    extends _$ExamByCategoryStateCopyWithImpl<$Res, _$NotFoundImpl>
-    implements _$$NotFoundImplCopyWith<$Res> {
-  __$$NotFoundImplCopyWithImpl(
-      _$NotFoundImpl _value, $Res Function(_$NotFoundImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$NotFoundImpl implements _NotFound {
-  const _$NotFoundImpl();
-
-  @override
-  String toString() {
-    return 'ExamByCategoryState.notFound()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NotFoundImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(ExamResponseModel data) success,
-    required TResult Function(String message) error,
-    required TResult Function() notFound,
-  }) {
-    return notFound();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(ExamResponseModel data)? success,
-    TResult? Function(String message)? error,
-    TResult? Function()? notFound,
-  }) {
-    return notFound?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(ExamResponseModel data)? success,
-    TResult Function(String message)? error,
-    TResult Function()? notFound,
-    required TResult orElse(),
-  }) {
-    if (notFound != null) {
-      return notFound();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_Error value) error,
-    required TResult Function(_NotFound value) notFound,
-  }) {
-    return notFound(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_NotFound value)? notFound,
-  }) {
-    return notFound?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_Error value)? error,
-    TResult Function(_NotFound value)? notFound,
-    required TResult orElse(),
-  }) {
-    if (notFound != null) {
-      return notFound(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _NotFound implements ExamByCategoryState {
-  const factory _NotFound() = _$NotFoundImpl;
 }

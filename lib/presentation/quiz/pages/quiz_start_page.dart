@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cbt_app_irfans/core/extensions/build_context_ext.dart';
 import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/exam_by_category/exam_by_category_bloc.dart';
+import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/quest_list/quest_list_bloc.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/components/custom_scaffold.dart';
@@ -41,22 +42,34 @@ class _QuizStartPageState extends State<QuizStartPage> {
       actions: [
         Assets.icons.clock.image(width: 24.0),
         const SizedBox(width: 8.0),
-        BlocBuilder<ExamByCategoryBloc, ExamByCategoryState>(
-          builder: (context, state) {
-            return state.maybeWhen(
-                orElse: () => const SizedBox(),
-                success: (data) {
-                  return CountdownTimer(
-                    duration: data.timer,
-                    onTimerCompletion: (timeRemaining) {
-                      context.pushReplacement(QuizFinishPage(
-                        data: widget.data,
-                        timeRemaining: timeRemaining,
-                      ));
-                    },
-                  );
-                });
+        BlocListener<ExamByCategoryBloc, ExamByCategoryState>(
+          listener: (context, state) {
+            state.maybeWhen(
+              orElse: () {},
+              success: (data) {
+                context.read<QuestListBloc>().add(
+                  QuestListEvent.getQuestList(data.data),
+                );
+              },
+            );
           },
+          child: BlocBuilder<ExamByCategoryBloc, ExamByCategoryState>(
+            builder: (context, state) {
+              return state.maybeWhen(
+                  orElse: () => const SizedBox(),
+                  success: (data) {
+                    return CountdownTimer(
+                      duration: data.timer,
+                      onTimerCompletion: (timeRemaining) {
+                        context.pushReplacement(QuizFinishPage(
+                          data: widget.data,
+                          timeRemaining: timeRemaining,
+                        ));
+                      },
+                    );
+                  });
+            },
+          ),
         ),
         IconButton(
             onPressed: () {
@@ -80,22 +93,22 @@ class _QuizStartPageState extends State<QuizStartPage> {
               fontSize: 18,
             ),
           ),
-          BlocBuilder<ExamByCategoryBloc, ExamByCategoryState>(
+          BlocBuilder<QuestListBloc, QuestListState>(
             builder: (context, state) {
               return state.maybeWhen(
                 orElse: () => const SizedBox(),
-                success: (data) {
+                success: (data, index, isNext) {
                   return Row(
                     children: [
                       Flexible(
                         child: LinearProgressIndicator(
-                          value: 1 / data.data.length,
+                          value: (index + 1 )/ data.length,
                           color: AppColors.primary,
                         ),
                       ),
                       const SizedBox(width: 16.0),
                       Text(
-                        '$quizNumber/${data.data.length}',
+                        '${index + 1}/${data.length}',
                         style: const TextStyle(fontSize: 16),
                       ),
                     ],
