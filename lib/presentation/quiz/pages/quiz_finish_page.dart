@@ -1,6 +1,6 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_cbt_app_irfans/core/extensions/build_context_ext.dart';
+import 'package:kiosk_mode/kiosk_mode.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/components/buttons.dart';
@@ -54,7 +54,10 @@ class _QuizFinishPageState extends State<QuizFinishPage> {
               ),
               const SizedBox(height: 42.0),
               Button.filled(
-                onPressed: () => context.popToRoot(),
+                onPressed: () async {
+                  // await stopKioskMode();
+                  context.popToRoot();
+                },
                 label: 'Kembali ke Beranda',
                 color: AppColors.white,
                 textColor: AppColors.primary,

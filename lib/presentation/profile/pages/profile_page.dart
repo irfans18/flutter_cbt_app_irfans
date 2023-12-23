@@ -4,6 +4,7 @@ import 'package:flutter_cbt_app_irfans/core/extensions/build_context_ext.dart';
 
 import '../../../core/components/custom_scaffold.dart';
 import '../../../data/datasources/auth_local_datasource.dart';
+import '../../../data/models/responses/auth_response_model.dart';
 import '../../auth/bloc/logout/logout_bloc.dart';
 import '../../auth/pages/login_page.dart';
 import '../widgets/profile_menu.dart';
@@ -30,26 +31,80 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(width: 16.0),
           SizedBox(
             width: context.deviceWidth - 160.0,
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Halo, Saiful Bahri',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                  ),
+                FutureBuilder<AuthResponseModel>(
+                  future: AuthLocalDataSource().getAuthData(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Text(
+                        "Halo, ${snapshot.data!.user.name}",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      );
+                    } else {
+                      return const Text(
+                        "Halo, Irfan Shiddiq",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      );
+                    }
+                  },
                 ),
-                Text(
-                  '@codewithbahri',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  overflow: TextOverflow.ellipsis,
+                const SizedBox(height: 8,),
+                FutureBuilder<AuthResponseModel>(
+                  future: AuthLocalDataSource().getAuthData(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return Text(
+                        snapshot.data!.user.email,
+                        style: const TextStyle(
+                           color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      );
+                    } else {
+                      return const Text(
+                        '@irfams99',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                        ),
+                        overflow: TextOverflow.ellipsis,
+                      );
+                    }
+                  },
                 ),
+
+                // Text(
+                //   'Halo, Saiful Bahri',
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: 20,
+                //     fontWeight: FontWeight.w500,
+                //   ),
+                // ),
+                // Text(
+                //   '@codewithbahri',
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: 12,
+                //     fontWeight: FontWeight.w400,
+                //   ),
+                //   overflow: TextOverflow.ellipsis,
+                // ),
               ],
             ),
           ),
