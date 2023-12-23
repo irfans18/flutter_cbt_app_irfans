@@ -63,7 +63,7 @@ class HeaderHome extends StatelessWidget {
                           );
                         } else {
                           return const Text(
-                            'Saiful Bahri',
+                            'Irfan Shiddiq',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12,

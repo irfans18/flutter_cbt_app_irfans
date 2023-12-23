@@ -8,6 +8,8 @@ class Api {
   static const courses = "$baseUrl/courses";
   static const getExams = "$baseUrl/get-exam-question?category=";
   static const createExam = "$baseUrl/create-exam";
-  static const score = "$baseUrl/get-score";
+  static const score = "$baseUrl/get-score?category=";
+  static const answer = "$baseUrl/answer";
+
 
 }

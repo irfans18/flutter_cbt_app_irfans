@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_cbt_app_irfans/data/datasources/exam_remote_datasource.dart';
+import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/answer/answer_bloc.dart';
+import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/count_score/count_score_bloc.dart';
 import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/create_exam/create_exam_bloc.dart';
 import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/exam_by_category/exam_by_category_bloc.dart';
 import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/quest_list/quest_list_bloc.dart';
+import 'package:kiosk_mode/kiosk_mode.dart';
 
 import 'core/constants/colors.dart';
 import 'data/datasources/auth_local_datasource.dart';
@@ -20,7 +23,9 @@ import 'presentation/home/bloc/content/content_bloc.dart';
 import 'presentation/home/pages/dashboard_page.dart';
 import 'presentation/onboarding/pages/onboarding_page.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // await startKioskMode();
   runApp(const MyApp());
 }
 
@@ -54,6 +59,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => QuestListBloc(),
+        ),
+        BlocProvider(
+          create: (context) => CountScoreBloc(ExamRemoteDataSource()),
+        ),
+        BlocProvider(
+          create: (context) => AnswerBloc(ExamRemoteDataSource()),
         ),
       ],
       child: MaterialApp(

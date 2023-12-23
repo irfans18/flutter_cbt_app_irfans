@@ -7,6 +7,7 @@ import 'package:flutter_cbt_app_irfans/presentation/quiz/bloc/quest_list/quest_l
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/components/custom_scaffold.dart';
 import '../../../core/constants/colors.dart';
+import '../bloc/count_score/count_score_bloc.dart';
 import '../models/quiz_model.dart';
 import '../widgets/countdown_timer.dart';
 import '../widgets/quiz_multiple_choice.dart';
@@ -35,7 +36,7 @@ class _QuizStartPageState extends State<QuizStartPage> {
 
   @override
   Widget build(BuildContext context) {
-    int quizNumber = 1;
+    // int quizNumber = 1;
 
     return CustomScaffold(
       appBarTitle: Text(widget.data.name),
@@ -47,9 +48,27 @@ class _QuizStartPageState extends State<QuizStartPage> {
             state.maybeWhen(
               orElse: () {},
               success: (data) {
-                context.read<QuestListBloc>().add(
-                  QuestListEvent.getQuestList(data.data),
-                );
+                if (data.timer == 0) {
+                  showDialog(
+                      context: context,
+                      builder: (context) => AlertDialog(
+                            title: const Text("Time's Up"),
+                            content: const Text(
+                              'Your time is up, Please click finish to get your score',
+                            ),
+                            actions: [
+                              TextButton(
+                                  child: const Text('Finish'),
+                                  onPressed: () => context.pushReplacement(
+                                      QuizFinishPage(
+                                          data: widget.data, timeRemaining: 0)))
+                            ],
+                          ));
+                } else {
+                  context.read<QuestListBloc>().add(
+                        QuestListEvent.getQuestList(data.data),
+                      );
+                }
               },
             );
           },
@@ -88,37 +107,47 @@ class _QuizStartPageState extends State<QuizStartPage> {
         padding: const EdgeInsets.all(30.0),
         children: [
           const Text(
-            'Pertanyaan',
+            'Question',
             style: TextStyle(
               fontSize: 18,
             ),
           ),
-          BlocBuilder<QuestListBloc, QuestListState>(
-            builder: (context, state) {
-              return state.maybeWhen(
-                orElse: () => const SizedBox(),
-                success: (data, index, isNext) {
-                  return Row(
-                    children: [
-                      Flexible(
-                        child: LinearProgressIndicator(
-                          value: (index + 1 )/ data.length,
-                          color: AppColors.primary,
-                        ),
-                      ),
-                      const SizedBox(width: 16.0),
-                      Text(
-                        '${index + 1}/${data.length}',
-                        style: const TextStyle(fontSize: 16),
-                      ),
-                    ],
-                  );
-                },
-              );
+          BlocListener<CountScoreBloc, CountScoreState>(
+            listener: (context, state) {
+              state.maybeWhen(
+                  orElse: () {},
+                  success: (score) {
+                    context.pushReplacement(
+                        QuizFinishPage(data: widget.data, timeRemaining: 0));
+                  });
             },
+            child: BlocBuilder<QuestListBloc, QuestListState>(
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () => const SizedBox(),
+                  success: (data, index, isNext) {
+                    return Row(
+                      children: [
+                        Flexible(
+                          child: LinearProgressIndicator(
+                            value: (index + 1) / data.length,
+                            color: AppColors.primary,
+                          ),
+                        ),
+                        const SizedBox(width: 16.0),
+                        Text(
+                          '${index + 1}/${data.length}',
+                          style: const TextStyle(fontSize: 16),
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+            ),
           ),
           const SizedBox(height: 16.0),
-          const QuizMultipleChoice(),
+          QuizMultipleChoice(category: widget.data.category),
         ],
       ),
     );
